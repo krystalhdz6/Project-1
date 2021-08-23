@@ -28,7 +28,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 - Load balancers protect the availability aspect of security.
 
-- The advantage of a jump box is that it is a secure admin workstation (SAW) that all admins will need to connect to the jump box in order to perform any administrative task. 
+- The advantage of a jump box is that it is a secure admin workstation (SAW) that all admins will need to connect to the jump box in order to perform any administrative task. It is used as the origination point to connect to other servers.
 
 Without a jump box, admins would be performing high-risk tasks (like opening emails that could contain malware) and then perform administrative tasks with administrative credentials on compromised networks. 
 
@@ -43,13 +43,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below
 
-| Name       | Function        | IP Address | Operating System |
-|------------|-----------------|------------|------------------|
-| Jump Box   | Server          | 10.0.0.6   | Linux            |
-| Web-1      | Server          | 10.0.0.4   | Linux            |
-| Web-2      | Server          | 10.0.0.5   | Linux            |
-| Web-3      | Server          | 10.0.0.7   | Linux            |
-| ELK-VM     | Elk Server      | 10.1.0.4   | Linux            |
+| Name       | Function        | IP Address          | Operating System |
+|------------|-----------------|---------------------|------------------|
+| Jump Box   | Server          | Public-IP, 10.0.0.6 | Linux            |
+| Web-1      | Server          | 10.0.0.4            | Linux            |
+| Web-2      | Server          | 10.0.0.5            | Linux            |
+| Web-3      | Server          | 10.0.0.7            | Linux            |
+| ELK-VM     | Elk Server      | Public-IP, 10.1.0.4 | Linux            |
 
 ### Access Policies
 
@@ -60,7 +60,7 @@ o	Public IP: $home_IP
 
 Machines within the network can only be accessed by SSH.
 
-•	The only machine that can access the Elk-Server is via SSH from the Ansible container on the Jump-Box¬ — using its Private IP. 
+•	The only machine that can access the Elk-Server is via SSH from the Ansible container on the Jump-Box — using its Private IP. 
 
 A summary of the access policies in place can be found in the table below.
 
